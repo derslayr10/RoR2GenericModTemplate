@@ -1,0 +1,79 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>REFERENCES - DO NOT DELETE\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="0Harmony20">
+      <HintPath>REFERENCES - DO NOT DELETE\0Harmony20.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>REFERENCES - DO NOT DELETE\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx">
+      <HintPath>REFERENCES - DO NOT DELETE\BepInEx.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx.Harmony">
+      <HintPath>REFERENCES - DO NOT DELETE\BepInEx.Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx.MonoMod.HookGenPatcher">
+      <HintPath>REFERENCES - DO NOT DELETE\BepInEx.MonoMod.HookGenPatcher.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx.MonoMod.Loader">
+      <HintPath>REFERENCES - DO NOT DELETE\BepInEx.MonoMod.Loader.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx.Preloader">
+      <HintPath>REFERENCES - DO NOT DELETE\BepInEx.Preloader.dll</HintPath>
+    </Reference>
+    <Reference Include="HarmonyXInterop">
+      <HintPath>REFERENCES - DO NOT DELETE\HarmonyXInterop.dll</HintPath>
+    </Reference>
+    <Reference Include="HGCSharpUtils">
+      <HintPath>REFERENCES - DO NOT DELETE\HGCSharpUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="MMHOOK_Assembly-CSharp">
+      <HintPath>REFERENCES - DO NOT DELETE\MMHOOK_Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>REFERENCES - DO NOT DELETE\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Mdb">
+      <HintPath>REFERENCES - DO NOT DELETE\Mono.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Pdb">
+      <HintPath>REFERENCES - DO NOT DELETE\Mono.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Rocks">
+      <HintPath>REFERENCES - DO NOT DELETE\Mono.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.RuntimeDetour">
+      <HintPath>REFERENCES - DO NOT DELETE\MonoMod.RuntimeDetour.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.Utils">
+      <HintPath>REFERENCES - DO NOT DELETE\MonoMod.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="R2API">
+      <HintPath>REFERENCES - DO NOT DELETE\R2API.dll</HintPath>
+    </Reference>
+    <Reference Include="R2API.Patcher">
+      <HintPath>REFERENCES - DO NOT DELETE\R2API.Patcher.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>REFERENCES - DO NOT DELETE\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>REFERENCES - DO NOT DELETE\UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>REFERENCES - DO NOT DELETE\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>REFERENCES - DO NOT DELETE\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
