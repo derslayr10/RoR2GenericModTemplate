@@ -1,12 +1,12 @@
-﻿using System;
-using BepInEx.Configuration;
+﻿using BepInEx.Configuration;
 using R2API;
 using RoR2;
 using $safeprojectname$.Base_Classes;
+using static $safeprojectname$.Utils.ItemHelper;
 
-namespace RoR2GenericModTemplate.Template_Plates
+namespace $safeprojectname$.Template_Plates
 {
-    class Item_Template : ItemBase
+    class $safeitemname$ : ItemBase
     {
         public override string ItemName => throw new NotImplementedException();
 

@@ -13,11 +13,13 @@ namespace RoR2GenericModTemplate
             //this will create the lists necessary for adding to the content pack
             //simply run the Create() of the class you want to add here
             Items.Create();
+            Unlockables.Create();
 
             customContentPack = new ContentPack {
 
                 //adds custom items to the content pack
                 itemDefs = Items.itemDefs,
+                unlockableDefs = Unlockables.unlockableDefs,
             
             };
 
@@ -51,6 +53,18 @@ namespace RoR2GenericModTemplate
         
         }
     
+    }
+
+    public static class Unlockables {
+
+        public static UnlockableDef[] unlockableDefs;
+
+        public static void Create() {
+
+            unlockableDefs = Base_Classes.Unlockables.unlockableDefs.ToArray();
+        
+        }
+
     }
 
 }

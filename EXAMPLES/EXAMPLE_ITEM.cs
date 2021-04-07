@@ -30,7 +30,7 @@ namespace RoR2GenericModTemplate.EXAMPLES
 
         public override void CreateConfig(ConfigFile config)
         {
-            throw new NotImplementedException();
+            //configs go here
         }
 
         public override ItemDisplayRuleDict CreateItemDisplayRules()

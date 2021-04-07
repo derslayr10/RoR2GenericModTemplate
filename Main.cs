@@ -46,7 +46,7 @@ namespace RoR2GenericModTemplate
         public void Awake() {
 
             //loads an asset bundle if one exists. Objects will need to be called from this bundle using AssetBundle.LoadAsset(string path)
-            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("$safeprojectname$.create_item_template_assets")) {
+            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("RoR2GenericModTemplate.generic_mod_template_assets")) {
 
                 Assets = AssetBundle.LoadFromStream(stream);
         

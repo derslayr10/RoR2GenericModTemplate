@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Template Plates\Item Template.cs~RF2d89ab09.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="0Harmony">
       <HintPath>REFERENCES - DO NOT DELETE\0Harmony.dll</HintPath>
     </Reference>
@@ -62,8 +66,17 @@
     <Reference Include="R2API.Patcher">
       <HintPath>REFERENCES - DO NOT DELETE\R2API.Patcher.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Postprocessing.Runtime">
+      <HintPath>REFERENCES - DO NOT DELETE\Unity.Postprocessing.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>REFERENCES - DO NOT DELETE\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine">
       <HintPath>REFERENCES - DO NOT DELETE\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>REFERENCES - DO NOT DELETE\UnityEngine.AnimationModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AssetBundleModule">
       <HintPath>REFERENCES - DO NOT DELETE\UnityEngine.AssetBundleModule.dll</HintPath>
@@ -74,6 +87,32 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>REFERENCES - DO NOT DELETE\UnityEngine.Networking.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>REFERENCES - DO NOT DELETE\UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>REFERENCES - DO NOT DELETE\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>REFERENCES - DO NOT DELETE\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>REFERENCES - DO NOT DELETE\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UNETModule">
+      <HintPath>REFERENCES - DO NOT DELETE\UnityEngine.UNETModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Wwise">
+      <HintPath>REFERENCES - DO NOT DELETE\Wwise.dll</HintPath>
+    </Reference>
+    <Reference Include="Zio">
+      <HintPath>REFERENCES - DO NOT DELETE\Zio.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="PLACE CUSTOM CLASSES HERE\Items\" />
+    <Folder Include="PLACE CUSTOM CLASSES HERE\Unlockables\" />
   </ItemGroup>
 
 </Project>
