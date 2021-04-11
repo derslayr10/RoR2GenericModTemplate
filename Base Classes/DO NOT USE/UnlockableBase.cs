@@ -12,7 +12,7 @@ using RoR2GenericModTemplate.Utils;
 namespace RoR2GenericModTemplate.Base_Classes
 {
 
-    internal static class Unlockables {
+    internal static class UnlockableBase {
 
         private static readonly HashSet<string> usedRewardIds = new HashSet<string>();
         internal static List<AchievementDef> achievementDefs = new List<AchievementDef>();
@@ -35,10 +35,10 @@ namespace RoR2GenericModTemplate.Base_Classes
             return newUnlockableDef;
         }
 
-        public static UnlockableDef AddUnlockable<TUnlockable>(bool serverTracked) where TUnlockable : BaseAchievement, IModdedUnlockableDataProvider, new()
+        internal static UnlockableDef AddUnlockable<TUnlockable>(bool serverTracked) where TUnlockable : BaseAchievement, IModdedUnlockableDataProvider, new()
         {
             TUnlockable instance = new TUnlockable();
-
+        
             string unlockableIdentifier = instance.UnlockableIdentifier;
 
             if (!usedRewardIds.Add(unlockableIdentifier)) throw new InvalidOperationException($"The unlockable identifier '{unlockableIdentifier}' is already used by another mod or the base game.");
@@ -142,43 +142,5 @@ namespace RoR2GenericModTemplate.Base_Classes
         Func<string> GetUnlocked { get; }
     }
 
-    public abstract class ModdedUnlockable : BaseAchievement, IModdedUnlockableDataProvider
-    {
-        #region Implementation
-        public void Revoke()
-        {
-            if (base.userProfile.HasAchievement(this.AchievementIdentifier))
-            {
-                base.userProfile.RevokeAchievement(this.AchievementIdentifier);
-            }
-
-            base.userProfile.RevokeUnlockable(UnlockableCatalog.GetUnlockableDef(this.UnlockableIdentifier));
-        }
-        #endregion
-
-        #region Contract
-        public abstract string AchievementIdentifier { get; }
-        public abstract string UnlockableIdentifier { get; }
-        public abstract string AchievementNameToken { get; }
-        public abstract string PrerequisiteUnlockableIdentifier { get; }
-        public abstract string UnlockableNameToken { get; }
-        public abstract string AchievementDescToken { get; }
-        public abstract Sprite Sprite { get; }
-        public abstract Func<string> GetHowToUnlock { get; }
-        public abstract Func<string> GetUnlocked { get; }
-        #endregion
-
-        #region Virtuals
-        public override void OnGranted() => base.OnGranted();
-        public override void OnInstall()
-        {
-            base.OnInstall();
-        }
-        public override void OnUninstall()
-        {
-            base.OnUninstall();
-        }
-        public override Single ProgressForAchievement() => base.ProgressForAchievement();
-        #endregion
-    }
+    
 }

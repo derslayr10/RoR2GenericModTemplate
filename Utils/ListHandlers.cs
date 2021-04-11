@@ -9,7 +9,7 @@ namespace RoR2GenericModTemplate.Utils
     public static class ListHandlers
     {
 
-        public static List<ItemDef> ItemDefList { get; }
+        public static List<ItemDef> ItemDefList { get; set; } = new List<ItemDef>();
 
     }
 

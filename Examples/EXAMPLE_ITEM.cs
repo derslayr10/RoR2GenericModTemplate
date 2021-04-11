@@ -5,12 +5,13 @@ using BepInEx.Configuration;
 using R2API;
 using RoR2;
 using RoR2GenericModTemplate.Base_Classes;
+using RoR2GenericModTemplate.Utils;
 using UnityEngine;
 using static RoR2GenericModTemplate.Utils.ItemHelper;
 
-namespace RoR2GenericModTemplate.EXAMPLES
+namespace RoR2GenericModTemplate.Examples
 {
-    class EXAMPLE_ITEM : ItemBase
+    public class EXAMPLE_ITEM : ItemBase
     {
         public override string ItemName => "EXAMPLE_ITEM";
 

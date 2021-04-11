@@ -6,7 +6,7 @@ using RoR2;
 using RoR2GenericModTemplate.Base_Classes;
 using UnityEngine;
 
-namespace RoR2GenericModTemplate.EXAMPLES
+namespace RoR2GenericModTemplate.Examples
 {
     class EXAMPLE_ACHIEVEMENT : AchievementBase
     {
@@ -41,15 +41,15 @@ namespace RoR2GenericModTemplate.EXAMPLES
 
         }));
 
-        public override void Configs(ConfigFile config)
+        public override void Config(ConfigFile config)
         {
-            //configs go here
+            //confgis go here
         }
 
         public override void Init(ConfigFile config)
         {
-            Configs(config);
-            Unlockables.AddUnlockable<EXAMPLE_ACHIEVEMENT>(true);
+            Config(config);
+            CreateAchievement();
         }
 
         //for each hook you have, run += here

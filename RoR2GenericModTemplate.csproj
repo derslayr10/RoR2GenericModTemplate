@@ -115,4 +115,9 @@
     <Folder Include="PLACE CUSTOM CLASSES HERE\Unlockables\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="Examples\EXAMPLE_ACHIEVEMENT.cs" />
+    <None Include="Examples\EXAMPLE_ITEM.cs" />
+  </ItemGroup>
+
 </Project>

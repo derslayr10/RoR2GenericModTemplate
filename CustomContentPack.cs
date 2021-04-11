@@ -1,5 +1,6 @@
 ﻿using RoR2;
 using RoR2GenericModTemplate.Utils;
+using RoR2GenericModTemplate.Base_Classes;
 
 namespace RoR2GenericModTemplate
 {
@@ -61,7 +62,7 @@ namespace RoR2GenericModTemplate
 
         public static void Create() {
 
-            unlockableDefs = Base_Classes.Unlockables.unlockableDefs.ToArray();
+            unlockableDefs = UnlockableBase.unlockableDefs.ToArray();
         
         }
 

@@ -1,9 +1,13 @@
 ﻿using System;
 using BepInEx;
+using BepInEx.Configuration;
 using R2API;
 using R2API.Utils;
 using System.Reflection;
 using UnityEngine;
+using RoR2GenericModTemplate.Base_Classes;
+using System.Collections.Generic;
+using RoR2GenericModTemplate;
 
 
 
@@ -46,7 +50,7 @@ namespace RoR2GenericModTemplate
         public void Awake() {
 
             //loads an asset bundle if one exists. Objects will need to be called from this bundle using AssetBundle.LoadAsset(string path)
-            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("RoR2GenericModTemplate.generic_mod_template_assets")) {
+            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("RoR2GenericModTemplate.mod_assets")) {
 
                 Assets = AssetBundle.LoadFromStream(stream);
         
@@ -54,6 +58,8 @@ namespace RoR2GenericModTemplate
 
             //runs our configs
             Configs();
+
+            Instantiate();
 
             //runs hooks that are seperate from all additions (i.e, if you need to call something when the game runs or at special times)
             Hooks();
@@ -73,6 +79,40 @@ namespace RoR2GenericModTemplate
         
             //insert hooks here
         
+        }
+
+        public void Instantiate() {
+
+            VerifyItems(new Examples.EXAMPLE_ITEM());
+            VerifyAchievements(new Examples.EXAMPLE_ACHIEVEMENT());
+        
+        }
+
+        //this method will instantiate our items based on a generated config option
+        public void VerifyItems(ItemBase item) {
+
+            var isEnabled = Config.Bind<bool>("Items", "enable" + item.ItemName, true, "Enable this item in game? Default: true").Value;
+
+            if (isEnabled) {
+
+                item.Init(base.Config);
+            
+            }
+        
+        }
+
+        public void VerifyAchievements(AchievementBase achievement)
+        {
+
+            var isEnabled = Config.Bind<bool>("Items", "enable" + achievement.AchievementNameToken, true, "Enable this achievement in game? Default: true").Value;
+
+            if (isEnabled)
+            {
+
+                achievement.Init(base.Config);
+
+            }
+
         }
 
         //place other necessary methods below
