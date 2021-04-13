@@ -26,3 +26,7 @@
   - This template is not a tutorial, but simply a guide to help you make things quicker and more easily. If you want a tutorial, look elsewhere.
   - This template includes a stubbed and publicized reference to the game's Assembly-CSharp.dll. This allows you access to otherwise private fields without using reflection, but will not allow you to steal the game. So, legal stuff only.
   - This template is for making creation of simple ideas faster and easier. It is not a do-all be-all for modding. It will create the foundation on which your mod to be built, not build the mod for you. If you want something to work, you need to learn how to do so. I highly encourage you to research and know what you are doing. This template will not include everything, and uncommon or niche requests will likely go ignored. This template is targeted for those who wish to get into modding but aren't fully sure how to begin, and as such will only include what I deem common enough in the modding community as a need to have a template for. Because of this, Interactables will likely not be included as part of the template unless a lot of people ask for it.
+
+## Credits
+ - Thanks to the R2API team for keeping their tools updated and accessible, allowing this tool to be available to users with very little knowledge of modding the game.
+ - Thanks to the Risk of Rain 2 Modding Discord for advice on how to implement features of this template.
