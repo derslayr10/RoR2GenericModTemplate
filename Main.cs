@@ -6,8 +6,6 @@ using R2API.Utils;
 using System.Reflection;
 using UnityEngine;
 using RoR2GenericModTemplate.Base_Classes;
-using System.Collections.Generic;
-using RoR2GenericModTemplate;
 
 
 
@@ -27,7 +25,7 @@ namespace RoR2GenericModTemplate
     [BepInPlugin(ModGUID, ModName, ModVersion)]
 
     //------------------This line adds R2API dependencies required. ONLY ADD THE ONES YOU NEED. If you need to know which ones you need, check the R2API documentation----------
-    [R2APISubmoduleDependency(nameof(ResourcesAPI), nameof(LanguageAPI))]
+    [R2APISubmoduleDependency(nameof(ResourcesAPI), nameof(LanguageAPI), nameof(UnlockableAPI), nameof(ItemAPI))]
 
     //main class where the most basic stuff happens. Basically only here to activate the mod.
     public class Main : BaseUnityPlugin {
@@ -52,20 +50,22 @@ namespace RoR2GenericModTemplate
             //loads an asset bundle if one exists. Objects will need to be called from this bundle using AssetBundle.LoadAsset(string path)
             using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("RoR2GenericModTemplate.mod_assets")) {
 
-                Assets = AssetBundle.LoadFromStream(stream);
-        
+                if (stream != null) {
+
+                    Assets = AssetBundle.LoadFromStream(stream);
+
+                }
+                
             }
 
             //runs our configs
             Configs();
 
+            //this method will instantiate everything we want to add to the game. see below
             Instantiate();
 
             //runs hooks that are seperate from all additions (i.e, if you need to call something when the game runs or at special times)
             Hooks();
-
-            //initializes our contentpack to be added to the game
-            CustomContentPack.Init();
 
         }
 
@@ -81,6 +81,7 @@ namespace RoR2GenericModTemplate
         
         }
 
+        //we make calls to Verify on each thing here to make our call in Awake clean
         public void Instantiate() {
 
             VerifyItems(new Examples.EXAMPLE_ITEM());
@@ -91,19 +92,23 @@ namespace RoR2GenericModTemplate
         //this method will instantiate our items based on a generated config option
         public void VerifyItems(ItemBase item) {
 
+            //generates a config file to turn the item on or off and get its value
             var isEnabled = Config.Bind<bool>("Items", "enable" + item.ItemName, true, "Enable this item in game? Default: true").Value;
 
+            //checks to see if the config is enabled
             if (isEnabled) {
 
+                //if the item is activated, instantiates the item
                 item.Init(base.Config);
             
             }
         
         }
 
+        //this method will instantiate our achievements based on a generated config option
         public void VerifyAchievements(AchievementBase achievement)
         {
-
+            
             var isEnabled = Config.Bind<bool>("Items", "enable" + achievement.AchievementNameToken, true, "Enable this achievement in game? Default: true").Value;
 
             if (isEnabled)

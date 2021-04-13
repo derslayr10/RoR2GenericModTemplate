@@ -5,7 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="mod_assets" />
     <None Remove="Template Plates\Item Template.cs~RF2d89ab09.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="mod_assets" />
   </ItemGroup>
 
   <ItemGroup>

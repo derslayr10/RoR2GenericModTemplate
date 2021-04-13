@@ -33,8 +33,11 @@ namespace RoR2GenericModTemplate.Base_Classes
         //determines if item is hidden from the game
         public virtual bool Hidden { get; }
 
+        //determines whether or not an unlockable is required
+        public virtual bool HasUnlockable { get; }
+
         //creates an unlockable requirement
-        public virtual UnlockableDef Unlockable { get; }
+        public virtual UnlockableDef ItemPreReq { get; }
 
         //creates necessary GameObject field for display rules
         public static GameObject ItemBodyModelPrefab;
@@ -45,7 +48,7 @@ namespace RoR2GenericModTemplate.Base_Classes
         public abstract void CreateConfig(ConfigFile config);
 
         //actually creates instance of item
-        ItemDef itemDef = ScriptableObject.CreateInstance<ItemDef>();
+         public ItemDef itemDef = ScriptableObject.CreateInstance<ItemDef>();
 
         //sets the lang tokens for in game use
         protected void CreateLang()
@@ -76,13 +79,13 @@ namespace RoR2GenericModTemplate.Base_Classes
             itemDef.tags = ItemTags;
             itemDef.canRemove = CanRemove;
             itemDef.tier = Tier;
-            itemDef.unlockableDef = Unlockable;
+            itemDef.unlockableDef = ItemPreReq;
 
             //sets the display of the item on characters
             var itemDisplayRuleDict = CreateItemDisplayRules();
 
-            //adds our item to a list to be added to the game
-            ListHandlers.ItemDefList.Add(itemDef);
+            //adds our item to the game via ItemAPI
+            ItemAPI.Add(new CustomItem(itemDef, CreateItemDisplayRules()));
 
         }
 
